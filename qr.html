@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>AR.js - Gambar dan Video</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ar.js/2.2.2/aframe-ar.min.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden">
+    <a-scene embedded arjs="trackingMethod: best; debugUIEnabled: false;">
+      <!-- Marker untuk menampilkan video -->
+      <a-marker preset="hiro" id="marker-video">
+        <!-- Video di atas balok, sedikit miring -->
+        <a-video
+          id="videoPlane"
+          position="0 0 0"
+          rotation="-90 0 0"
+          width="1.5"
+          height="3"
+          src="#video"
+        ></a-video>
+      </a-marker>
+      <!-- Kamera -->
+      <a-entity camera></a-entity>
+      <video
+        id="video"
+        src="vidio.mp4"
+        autoplay
+        loop="true"
+        style="display: none"
+      ></video>
+    </a-scene>
+  </body>
+</html>
